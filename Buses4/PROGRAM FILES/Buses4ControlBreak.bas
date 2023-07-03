@@ -1,0 +1,304 @@
+REM Timothy Lee
+REM Programming Logic Winter 2012
+REM Program Assignment 4: Multiple Control Break Example Buses
+REM
+REM BUSINESS POINT OF VIEW:
+REM The purpose of this program is to accumulate data about total passengers and total bus fare
+REM for a bus company by Bus Number, Bus Type, and Date.
+REM
+REM PERSONAL POINT OF VIEW:
+REM The purpose of the program is to give an example of the usefulness of Control Breaks.  It teaches how to
+REM accumulate subtotals during control breaks and move them on toB overall totals.
+
+
+REM INPUT FIELDS(Takes input from BUSFILE.txt)
+
+GLOBAL Date$
+GLOBAL BusType$
+GLOBAL BusNum
+GLOBAL DeptTerm$
+GLOBAL ArrivTerm$
+GLOBAL RateCode
+GLOBAL NumInGroup
+GLOBAL GroupName$
+GLOBAL BusTypeP$
+
+REM CONTROL BREAK PROCESSING FIELDS
+
+GLOBAL Rate
+GLOBAL GroupFare
+GLOBAL TotPassenger
+GLOBAL TotFare
+
+GLOBAL PrevBusNum
+GLOBAL PrevBusType$
+GLOBAL PrevDate$
+
+REM ACCUMULATORS AND TOTALS
+
+GLOBAL TotBusNum
+GLOBAL TotBusType
+GLOBAL TotDate
+GLOBAL FinTotal
+
+GLOBAL TotPassBT
+GLOBAL TotPassD
+GLOBAL TotPassFin
+
+REM PAGINATION FIELDS
+
+GLOBAL PageNum
+GLOBAL PAGESIZE
+GLOBAL LineCounter
+
+
+
+
+REM LEVEL 1 FLOWCHART PROCESSES/ROUTINES
+
+REM MAINLINE PROCESSES (Housekeeping, Process Records, and End of Job are all subroutines within the MainLine)
+
+GOSUB [HouseKeeping]
+    DO WHILE eof(#BUSFILE) = 0       ' As long as the eof switch is set to off(0), loop ProcessRecords
+        GOSUB [ProcessRecords]
+    LOOP
+    GOSUB [EndOfJob]               ' Ending the Program
+END
+
+[HouseKeeping]                     ' HouseKeepings job is to open files, initialize vars, one time processes, and priming read
+    GOSUB [InitializeVariables]    ' Initializes all variables that need it to an initial value, including constants
+    GOSUB [OpenFiles]              ' Opens all files the program will use, in this case the field input file
+    GOSUB [ReadFile]               ' Places the data of the input field file into the already declared variables using an input field for priming read
+    GOSUB [PrevBusNumSetup]          ' Sets up Control Break fields for next Bus Number
+    GOSUB [PrevBusTypeSetup]         ' Sets up Control Break fields for next Bus Type
+    GOSUB [PrevDateSetup]          ' Sets up Control Break fields for next Date
+RETURN
+
+[ProcessRecords]                   ' Calculates the Commission of each employee and displays it according to the Printer Spacing Chart
+    GOSUB [DetailCalculation]
+    GOSUB [ControlBreakCheck]      ' Checks to see if Control Breaks need to be performed
+    GOSUB [Accumulation]           ' Accumulates the Total Sales for the Department
+    GOSUB [DetailOutput]           ' Neatly displays all outputs, and needed info according to the Printer Spacing Chart
+    GOSUB [ReadFile]               ' Reads next data record in the input field file
+RETURN
+
+[EndOfJob]                         ' Prints the End of the Report and closes the field input file
+    GOSUB [SummaryOutput]
+    GOSUB [CloseFiles]             ' Closes the input field file
+RETURN
+
+
+
+
+REM LEVEL 2 HOUSEKEEPING ROUTINES
+
+[InitializeVariables]             ' Sets initial values for all parameters/vars/consts that need them
+    BusNum = 0
+    RateCode = 0
+    NumInGroup = 0
+    Rate = 0
+    GroupFare = 0
+    TotPassenger = 0
+    TotFare = 0
+    PrevBusNum = 0
+    TotBusNum = 0
+    TotBusType = 0
+    TotDate = 0
+    FinTotal = 0
+    TotPassBT = 0
+    TotPassD = 0
+    TotPassFin = 0
+    PageNum = 0
+    LineCounter = 44            ' Set LineCounter to larger than PAGESIZE so Headings pops up at the beginning of the program
+    PAGESIZE = 40
+RETURN
+
+
+[OpenFiles]                       ' Opens BUSFILE.txt for use within program
+    OPEN "BUSFILE.txt" FOR INPUT AS #BUSFILE
+RETURN
+
+
+[PrevBusNumSetup]                      ' Sets up a new control break check
+   PrevBusNum = BusNum
+RETURN
+
+[PrevBusTypeSetup]                     ' Sets up a new control break check
+   PrevBusType$ = BusType$
+RETURN
+
+[PrevDateSetup]                        ' Sets up a new control break check
+   PrevDate$ = Date$
+RETURN
+
+REM End of Housekeeping Routines
+
+
+
+REM LEVEL 2 PROCESS RECORDS ROUTINES
+
+[DetailCalculation]
+    GOSUB[BusTypeIF]                 ' Routine Deciding which bus type to Print
+    GOSUB[RateCodeCase]              ' Routine Deciding the Rate from the Rate Code
+    GroupFare = NumInGroup * Rate    ' Calculating the Group Fare for Use with the Total Fare
+RETURN
+
+[ControlBreakCheck]                               ' Checks to see if Control Breaks need to be performed
+    IF Date$ <> PrevDate$ THEN              ' Prints all Control Breaks
+        PRINT
+            GOSUB [TotByBusNum]            ' Totals by bus number
+            GOSUB [TotByBusType]           ' Totals by Bus Type
+            GOSUB [TotByDate]              ' Totals By Date
+        PRINT
+        PRINT
+    ELSE
+        IF BusType$ <> PrevBusType$ THEN          ' Prints two Control Breaks
+            PRINT
+                GOSUB [TotByBusNum]
+                GOSUB [TotByBusType]
+            PRINT
+        ELSE
+            IF BusNum <> PrevBusNum THEN            ' Prints one Control Break
+                PRINT
+                    GOSUB [TotByBusNum]
+                PRINT
+            END IF
+        END IF
+    END IF
+RETURN
+
+
+[Accumulation]                                ' Accumulates values outside of Control Breaks that need to be accumulated
+    TotFare = TotFare + GroupFare
+    TotBusNum = TotBusNum + TotFare
+    TotPassenger = TotPassenger + NumInGroup
+RETURN
+
+
+[DetailOutput]                         ' Neatly displays all outputs, and needed info according to the Printer Spacing Chart
+    IF LineCounter > PAGESIZE THEN     ' Checks to see if the page needs to be advanced
+        GOSUB[Headings]               ' Prints Headings upon page advance
+    END IF
+    PRINT Date$; Tab(7); BusTypeP$; Tab(17); USING("##", BusNum); Tab(21); GroupName$; Tab(31); DeptTerm$; Tab(45); ArrivTerm$; Tab(58); USING("##", NumInGroup); Tab(61); USING("###.##", Rate); Tab(69); USING("####.##", TotFare)
+    LineCounter = LineCounter + 1      ' Incrementing the LineCounter
+    GroupFare = 0                     ' Reseting accumulated values
+    TotFare = 0                       ' Reseting accumulated values
+RETURN
+
+
+
+[Headings]                              ' Prints headings according to the printer spacing chart
+    PRINT CHR$(12)                      ' Advances the page
+    PageNum = PageNum + 1               ' Accumulates the Page Number Variable
+    PRINT Tab(29); "Roving Busses Report"; Tab(61); "Page "; USING("##", PageNum)
+    PRINT Tab(24); "By Bus Number, Bus Type, Date"
+    PRINT Tab(33); "For: Timothy Lee"
+    PRINT
+    PRINT Tab(7); "Bus"; Tab(16); "Bus"; Tab(21); "Group"; Tab(30); "Departure"; Tab(45); "Arrival"; Tab(55); "No in"; Tab(71); "Total"
+    PRINT "Date"; Tab(7); "Type"; Tab(17); "No"; Tab(21); "Name"; Tab(30); "Location"; Tab(45); "Location"; Tab(55); "Group"; Tab(63); "Rate"; Tab(72); "Fare"
+    PRINT
+    LineCounter = 7                    ' Resets the LineCounter to # after headings print
+RETURN
+
+REM End of Process Records Routines
+
+
+
+REM ReadFile Routine thats both part of HouseKeeping and ProcessRecords
+
+[ReadFile]                                 ' Reads the field input file and places the data into already declared vars
+    INPUT #BUSFILE, Date$, BusType$, BusNum, DeptTerm$, ArrivTerm$, RateCode, GroupName$, NumInGroup
+RETURN
+
+
+REM Control Break Processing Routines in Output Order
+
+[TotByBusNum]          ' Calculates Totals By Bus Number and Prints it according to spacing chart
+    PRINT Tab(16); "Totals By Bus Number "; USING("##", PrevBusNum); Tab(57); USING("###", TotPassenger); Tab(68); USING("#####.##", TotBusNum); "*"
+    PRINT
+    TotPassBT = TotPassBT + TotPassenger      ' Passing Accumulated values
+    TotPassenger = 0                          ' Reseting Values
+    TotBusType = TotBusType + TotBusNum       ' Passing Accumulated values
+    TotBusNum = 0                             ' Reseting Values
+    LineCounter = LineCounter + 2             ' Incrementing LineCounter
+    GOSUB[PrevBusNumSetup]                    ' Setting up next Control Break
+RETURN
+
+[TotByBusType]         ' Calculates Totals By Bus Type and Prints it according to spacing chart
+    PRINT Tab(16); "Totals By Bus Type "; BusTypeP$; Tab(56); USING("####", TotPassBT); Tab(67); USING("######.##", TotBusType); "**"
+    PRINT
+    TotPassD = TotPassD + TotPassBT      ' Passing Accumulated values
+    TotPassBT = 0                        ' Reseting Values
+    TotDate = TotDate + TotBusType       ' Passing Accumulated values
+    TotBusType = 0                       ' Reseting Values
+    LineCounter = LineCounter + 2        ' Incrementing LineCounter
+    GOSUB[PrevBusTypeSetup]              ' Setting up next Control Break
+RETURN
+
+[TotByDate]           ' Calculates Totals By Date and Prints it according to spacing chart
+    PRINT Tab(16); "Totals By Date "; PrevDate$; Tab(55); USING("#####", TotPassD); Tab(67); USING("######.##", TotDate); "***"
+    PRINT
+    TotPassFin = TotPassFin  + TotPassD  ' Passing Accumulated values
+    TotPassD = 0                         ' Reseting Values
+    FinTotal = FinTotal + TotDate        ' Passing Accumulated values
+    TotDate = 0                          ' Reseting Values
+    LineCounter = LineCounter + 2        ' Incrementing LineCounter
+    GOSUB[PrevDateSetup]                 ' Setting up next Control Break
+RETURN 
+
+REM End Control Break Processing Routines
+
+
+REM IF and CASE Routines
+
+[BusTypeIF]                   ' Decides whether to print regular or speedy
+    IF BusType$ = "R" THEN
+        BusTypeP$ = "Regular"
+    ELSE
+        BusTypeP$ = "Speedy"
+    END IF
+RETURN
+
+[RateCodeCase]                ' Decides what the value for Rate is based off of RateCode
+    SELECT CASE RateCode
+        CASE 1
+            Rate = 10
+        CASE 2
+            Rate = 25
+        CASE 3
+            Rate = 30
+        CASE 4
+            Rate = 35
+        CASE 5
+            Rate = 45
+        CASE 6
+            Rate = 50
+        CASE 7
+            Rate = 55
+        CASE 8
+            Rate = 60
+        CASE 9
+            Rate = 68
+        CASE ELSE
+            Rate = 75
+    END SELECT
+RETURN
+
+
+REM End of Jobs Routines
+
+[SummaryOutput]             ' Prints that the End of the Report has been reached and Overall Totals
+    PRINT
+    GOSUB[TotByBusNum]    ' Final Outputs
+    GOSUB[TotByBusType]   ' Final Outputs
+    GOSUB[TotByDate]    ' Final Outputs
+    PRINT
+    PRINT
+    PRINT Tab(16); "Final Totals of All Busses"; Tab(54); USING("######", TotPassFin); Tab(66); USING("#######.##", FinTotal); "****"
+    PRINT
+    PRINT
+RETURN
+
+[CloseFiles]        ' Closes the BUSFILE.txt file so it doesn't not stay open
+    CLOSE #BUSFILE
+RETURN

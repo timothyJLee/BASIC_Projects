@@ -1,0 +1,162 @@
+
+                            Roving Busses Report            Page  1
+                       By Bus Number, Bus Type, Date
+                                For: Timothy Lee
+
+      Bus      Bus  Group    Departure      Arrival   No in           Total
+Date  Type      No  Name     Location       Location  Group   Rate     Fare
+
+12/28 Regular   10  Jones     Chicago       Niles         1  25.00    25.00
+12/28 Regular   10  Smith     Chicago       Niles         3  75.00   225.00
+12/28 Regular   10  Howler    Mich City     Kalamazoo     7  10.00    70.00
+12/28 Regular   10  Yanke     Niles         Ann Arbor     1  50.00    50.00
+12/28 Regular   10  General   Kalamazoo     Ann Arbor     4  35.00   140.00
+
+               Totals By Bus Number 10                   16          510.00*
+
+
+12/28 Regular   30  Johns     Chicago       Dowagiac      2  30.00    60.00
+12/28 Regular   30  Jones     Mich City     Dowagiac      3  68.00   204.00
+12/28 Regular   30  Jenemic   Niles         Ann Arbor     5  50.00   250.00
+
+               Totals By Bus Number 30                   10          514.00*
+
+
+12/28 Regular   45  Stone     Chicago       Niles         2  25.00    50.00
+12/28 Regular   45  Adles     Chicago       Mich City     1  10.00    10.00
+12/28 Regular   45  White     Mich City     Albion        4  45.00   180.00
+12/28 Regular   45  LIGHT     Niles         Albion        1  60.00    60.00
+12/28 Regular   45  RedCross  Niles         Ann Arbor     9  50.00   450.00
+
+               Totals By Bus Number 45                   17          750.00*
+
+
+12/28 Regular   47  Renn      Chicago       Kalamazoo     3  35.00   105.00
+12/28 Regular   47  Stewert   Mich City     Kalamazoo     2  55.00   110.00
+12/28 Regular   47  Janson    Jackson       Kalamazoo     1  25.00    25.00
+12/28 Regular   47  WMU       Jackson       Kalamazoo    12  10.00   120.00
+
+               Totals By Bus Number 47                   18          360.00*
+
+               Totals By Bus Type Speedy                 61         2134.00**
+
+
+12/28 Speedy    30  KVCC      Kalamazoo     Ann Arbor    17  35.00   595.00
+12/28 Speedy    30  Simlly    Battle Crk    Ann Arbor     6  30.00   180.00
+12/28 Speedy    30  Allis     Ann Arbor     Ann Arbor     8  10.00    80.00
+
+               Totals By Bus Number 30                   31          855.00*
+
+               Totals By Bus Type Regular                31          855.00**
+
+               Totals By Date 12/28                      92         2989.00***
+
+
+
+
+                            Roving Busses Report            Page  2
+                       By Bus Number, Bus Type, Date
+                                For: Timothy Lee
+
+      Bus      Bus  Group    Departure      Arrival   No in           Total
+Date  Type      No  Name     Location       Location  Group   Rate     Fare
+
+12/29 Regular   13  Fixun     Chicago       Ann Arbor     2  60.00   120.00
+12/29 Regular   13  Ford      Chicago       Niles         5  25.00   125.00
+12/29 Regular   13  Gilmore   Mich City     Ann Arbor     4  55.00   220.00
+12/29 Regular   13  Tipon     Mich City     Niles         1  10.00    10.00
+12/29 Regular   13  KCollege  Niles         Dowagiac      8  10.00    80.00
+12/29 Regular   13  Parfet    Kalamazoo     Battle Crk    3  10.00    30.00
+12/29 Regular   13  Trayer    Battle Crk    Ann Arbor     6  30.00   180.00
+
+               Totals By Bus Number 13                   29          765.00*
+
+
+12/29 Regular   25  Cole      Ann Arbor     Ann Arbor     2  10.00    20.00
+12/29 Regular   25  Chevy     Ann Arbor     Ann Arbor    10  10.00   100.00
+
+               Totals By Bus Number 25                   12          120.00*
+
+               Totals By Bus Type Speedy                 41          885.00**
+
+
+12/29 Speedy    11  Lindt     Chicago       Mich City     4  10.00    40.00
+12/29 Speedy    11  Paustian  Kalamazoo     Battle Crk    2  10.00    20.00
+12/29 Speedy    11  Evans     Kalamazoo     Battle Crk    3  45.00   135.00
+12/29 Speedy    11  Derfler   Kalamazoo     Ann Arbor     5  35.00   175.00
+12/29 Speedy    11  Doans     Kalamazoo     Ann Arbor     8  10.00    80.00
+
+               Totals By Bus Number 11                   22          450.00*
+
+
+12/29 Speedy    12  Norwich   Chicago       Ann Arbor     2  60.00   120.00
+12/29 Speedy    12  Johnson   Mich City     Ann Arbor     1  68.00    68.00
+12/29 Speedy    12  Anderson  Mich City     Ann Arbor     4  55.00   220.00
+12/29 Speedy    12  GM        Kalamazoo     Ann Arbor    10  45.00   450.00
+12/29 Speedy    12  Norton    Battle Crk    Ann Arbor     7  45.00   315.00
+12/29 Speedy    12  Ranger    Battle Crk    Ann Arbor     2  10.00    20.00
+
+               Totals By Bus Number 12                   26         1193.00*
+
+               Totals By Bus Type Regular                48         1643.00**
+
+               Totals By Date 12/29                      89         2528.00***
+
+
+
+
+                            Roving Busses Report            Page  3
+                       By Bus Number, Bus Type, Date
+                                For: Timothy Lee
+
+      Bus      Bus  Group    Departure      Arrival   No in           Total
+Date  Type      No  Name     Location       Location  Group   Rate     Fare
+
+12/30 Regular   92  Smart     Chicago       Ann Arbor     4  68.00   272.00
+12/30 Regular   92  Colins    Chicago       Ann Arbor     1  60.00    60.00
+12/30 Regular   92  Junco     Niles         Ann Arbor     1  60.00    60.00
+12/30 Regular   92  Alban     Kalamazoo     Ann Arbor     2  35.00    70.00
+12/30 Regular   92  Alex      Battle Crk    Ann Arbor     2  35.00    70.00
+12/30 Regular   92  Walgreen  Battle Crk    Jackson      12  25.00   300.00
+12/30 Regular   92  Hendyson  Battle Crk    Jackson       1  10.00    10.00
+
+               Totals By Bus Number 92                   23          842.00*
+
+
+12/30 Regular   95  Howard    Chicago       Dowagiac      1  30.00    30.00
+12/30 Regular   95  Banks     Mich City     Dowagiac      3  68.00   204.00
+12/30 Regular   95  Pippen    Niles         Battle Crk    4  30.00   120.00
+12/30 Regular   95  Herbert   Battle Crk    Ann Arbor     2  30.00    60.00
+12/30 Regular   95  MGM       Jackson       Ann Arbor     6  10.00    60.00
+12/30 Regular   95  A Grill   Ann Arbor     Ann Arbor     2  25.00    50.00
+
+               Totals By Bus Number 95                   18          524.00*
+
+               Totals By Bus Type Speedy                 41         1366.00**
+
+
+12/30 Speedy    95  Gates     Chicago       Mich City     1  10.00    10.00
+12/30 Speedy    95  Jimmy     Chicago       Albion        1  50.00    50.00
+12/30 Speedy    95  Flower    Chicago       Albion        9  68.00   612.00
+12/30 Speedy    95  Baker     Mich City     Albion        5  68.00   340.00
+
+               Totals By Bus Number 95                   16         1012.00*
+
+
+12/30 Speedy    98  Pepinig   Kalamazoo     Albion        2  50.00   100.00
+12/30 Speedy    98  Joes      Chicago       Albion        2  50.00   100.00
+12/30 Speedy    98  Kitty     Chicago       Albion        3  68.00   204.00
+12/30 Speedy    98  Cook      Mich City     Albion        5  68.00   340.00
+
+               Totals By Bus Number 98                   12          744.00*
+
+               Totals By Bus Type Speedy                 28         1756.00**
+
+               Totals By Date 12/30                      69         3122.00***
+
+
+
+               Final Totals of All Busses               250         8639.00****
+
+
+

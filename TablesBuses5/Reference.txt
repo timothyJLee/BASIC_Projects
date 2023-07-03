@@ -1,0 +1,78 @@
+special
+mad men
+family guy
+simpsons
+
+
+[LoadArrays]
+   DIM RATETBL[9]
+   OPEN "RATETBL.txt" FOR INPUT AS #RATETBL
+   FOR SUBSCRIPT1 = 0 TO 9
+      INPUT #RATETBL, RateTBLData
+      RATETBL[SUBSCRIPT1] = RateTBLData
+   NEXT
+
+   DIM CODETBL[10]
+   OPEN "CODETBL.txt" FOR INPUT AS #CODETBL
+   FOR SUBSCRIPT2 = 0 TO 9
+      INPUT #CODETBL, CodeTBLData
+      CODETBL[SUBSCRIPT2] = CodeTBLData
+   NEXT
+
+   DIM CITYTBL$[10]
+   OPEN "CITYTBL.txt" FOR INPUT AS #CITYTBL
+   FOR SUBSCRIPT3 = 0 TO 9
+      INPUT #CITYTBL, CityTBLData
+      CITYTBL[SUBSCRIPT3] = CityTBLData
+   NEXT
+RETURN
+
+GLOBAL RateTBLData
+GLOBAL CodeTBLData$
+GLOBAL CityTBLData$
+
+GLOBAL SUBSCRIPT1
+GLOBAL SUBSCRIPT2
+GLOBAL SUBSCRIPT3
+
+[ArraySearch]
+DeptTermDex    ' SaveSubScript
+ArrivTermDex 
+
+MAXCODETBL  ' hold max for array
+
+REM TABLE SEARCHING
+FoundCityCode$     ' y or n
+SubscriptSearch1
+SubscriptSearch2
+
+CityMatchDept$
+CityMatchArriv$
+
+SearchDept
+SearchArriv
+
+REM INPUT VARS
+DeptTerm$
+ArrivTerm$
+
+IF FoundCityCode$ = "Y" THEN
+	GOSUB[SaveSubscript]
+
+FOR SubscriptSearch = 1 to MAXRATECODE
+
+
+
+FOR SubscriptSearch1 = 1 to MAXCODETBL
+	IF DeptTerm$ = CODETBL(SubscriptSearch1) THEN
+		DeptTermDex = SubscriptSearch1
+		SubscriptSearch1 = MAXCODETBL - 1
+	END IF
+NEXT SubscriptSearch1
+
+FOR SubscriptSearch2 = 1 to MAXCODETBL
+	IF ArrivTerm$ = CODETBL(SubscriptSearch2) THEN
+		ArrivTermDex = SubscriptSearch2
+		SubscriptSearch2 = MAXCODETBL - 1
+	END IF
+NEXT SubscriptSearch2

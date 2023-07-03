@@ -1,0 +1,37 @@
+Control Break Processes:
+
+When the Bus Number changes – print the total number of passengers and total fares for that Bus Number.
+When the Bus Type changes – print the total number of passengers and total fares for the Bus Number & Bus Type. 
+When the Date changes – print the total number of passengers and total fares for the Bus Number, Bus Type & Date.   
+
+
+BusNum
+PrevBusNum
+
+BusType$
+PrevBusType$
+
+Date
+PrevDate
+
+[PrevBusNumSetup]
+   PrevBusNum = BusNum
+RETURN
+
+[PrevBusTypeSetup]
+   PrevBusType$ = BusType$
+RETURN
+
+[PrevDateSetup]
+   PrevDate = Date
+RETURN
+
+[TotByBusNum]
+[TotByBusType]
+[TotByDate]
+
+
+Case RateCode
+If BusType$
+BusTypeP$
+Add LineCounters

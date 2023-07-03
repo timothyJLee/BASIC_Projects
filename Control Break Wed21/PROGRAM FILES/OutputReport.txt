@@ -1,0 +1,52 @@
+
+                       Sales Report                    Page  # 1
+
+DISTRICT   STORE       DEPT          SALESPERSON       DAILY SALES
+
+100         1          DISHES        Steven Alber          40.00
+100         1          DISHES        Maxine Cheny          80.00
+
+                          TOTAL FOR DEPT DISHES           $  120.00
+
+100         1          TOOLS         George Et             30.00
+100         1          TOOLS         Lucy Leavy            20.00
+100         1          TOOLS         Lance Lindt           55.00
+
+                          TOTAL FOR DEPT TOOLS            $  105.00
+                          TOTAL FOR STORE  1              $  225.00
+
+100         2          TOOLS         Chris Sanchz          30.00
+100         2          TOOLS         Martin Gill           20.00
+
+                          TOTAL FOR DEPT TOOLS            $   50.00
+                          TOTAL FOR STORE  2              $   50.00
+                          TOTAL FOR DISTRICT 100          $  275.00
+
+
+200         1          DISHES        Sheila Napol          30.00
+
+                       Sales Report                    Page  # 2
+
+DISTRICT   STORE       DEPT          SALESPERSON       DAILY SALES
+
+200         1          DISHES        Max Marcs             50.00
+200         1          DISHES        Andrea All            15.00
+
+                          TOTAL FOR DEPT DISHES           $   95.00
+
+200         1          PLUMBING      Cecil Saw             40.00
+200         1          PLUMBING      Eddie Sea             60.00
+
+                          TOTAL FOR DEPT PLUMBING         $  100.00
+                          TOTAL FOR STORE  1              $  195.00
+
+200         4          TOOLS         Sally Sue             25.00
+200         4          TOOLS         Dan Dapper            10.00
+
+                          TOTAL FOR DEPT TOOLS            $   35.00
+                          TOTAL FOR STORE  4              $   35.00
+                          TOTAL FOR DISTRICT 200          $  230.00
+
+
+                          FINAL TOTAL ALL DISTRICTS       $  505.00
+

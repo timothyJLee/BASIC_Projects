@@ -1,0 +1,62 @@
+12/28,R,10,Chicago,	Niles,	   2,Jones,     1
+12/28,R,10,Chicago,	Detroit,  10,Smith,	3
+12/28,R,10,Mich City,	Kalamazoo, 1,Howler,	7
+12/28,R,10,Niles,	Ann Arbor, 6,Yanke,	1
+12/28,R,10,Kalamazoo,	Ann Arbor, 4,General,	4
+12/28,R,30,Chicago,	Dowagiac,  3,Johns,	2
+12/28,R,30,Mich City, 	Detroit,   9,Jones,	3
+12/28,R,30,Niles,	Ann Arbor, 6,Jenemic,	5
+12/28,R,45,Chicago, 	Niles,	   2,Stone,	2
+12/28,R,45,Chicago,	Mich City, 1,Adles,	1
+12/28,R,45,Mich City,	Albion,	   5,White,	4
+12/28,R,45,Niles,	Detroit,   8,LIGHT,	1
+12/28,R,45,Niles,	Ann Arbor, 6,RedCross,	9
+12/28,R,47,Chicago,	Kalamazoo, 4,Renn,	3
+12/28,R,47,Mich City,	Dearborn,  7,Stewert,	2
+12/28,R,47,Jackson,	Dearborn,  2,Janson,	1
+12/28,R,47,Dearborn,	Detroit,   1,WMU,      12
+12/28,S,30,Kalamazoo,	Ann Arbor, 4,KVCC,     17
+12/28,S,30,Battle Crk,	Ann Arbor, 3,Simlly,	6
+12/28,S,30,Ann Arbor,	Dearborn,  1,Allis,	8
+12/29,R,13,Chicago,	Ann Arbor, 8,Fixun,	2
+12/29,R,13,Chicago, 	Niles,	   2,Ford,	5
+12/29,R,13,Mich City,	Ann Arbor, 7,Gilmore,	4
+12/29,R,13,Mich City,	Niles,	   1,Tipon,	1
+12/29,R,13,Niles,	Dowagiac,  1,KCollege,	8
+12/29,R,13,Kalamazoo,	Battle Crk,1,Parfet,	3
+12/29,R,13,Battle Crk,	Ann Arbor, 3,Trayer,	6
+12/29,R,25,Ann Arbor,	Dearborn,  1,Cole,	2
+12/29,R,25,Dearborn, 	Detroit,   1,Chevy,    10
+12/29,S,11,Chicago,	Mich CitY, 1,Lindt,	4
+12/29,S,11,Kalamazoo,	Battle Crk,1,Paustian,	2
+12/29,S,11,Kalamazoo,	Dearborn,  5,Evans,	3
+12/29,S,11,Kalamazoo,	Ann ArboT, 4,Derfler,	5
+12/29,S,11,Dearborn,	Detroit,   1,Doans,	8
+12/29,S,12,Chicago,	Ann Arbor, 8,Norwich,	2
+12/29,S,12,Mich City,	Detroit,   9,Johnson,	1
+12/29,S,12,Mich City,	Ann Arbor, 7,Anderson,	4
+12/29,S,12,Kalamazoo,	Dearborn,  5,GM,       10
+12/29,S,12,Battle Crk,	Detroit,   5,Norton,	7
+12/29,S,12,Dearborn,	Detroit,   1,Ranger,	2
+12/30,R,92,Chicago,	Dearborn,  9,Smart,	4
+12/30,R,92,Chicago,	Ann Arbor, 8,Colins,	1
+12/30,R,92,Niles,	Detroit,   8,Junco,	1
+12/30,R,92,Kalamazoo,	Ann Arbor, 4,Alban,	2
+12/30,R,92,Battle Crk,	Dearborn,  4,Alex,	2
+12/30,R,92,Battle Crk,	Jackson,   2,Walgreen, 12
+12/30,R,92,Dearborn,	Detroit,   1,Hendyson,	1
+12/30,R,95,Chicago,	Dowagiac,  3,Howard,	1
+12/30,R,95,Mich City,	Detroit,   9,Banks,	3
+12/30,R,95,Niles,	Battle Crk,3,Pippen,	4
+12/30,R,95,Battle Crk,	Ann Arbor, 3,Herbert,	2
+12/30,R,95,Jackson,	Ann Arbor, 1,MGM,	6
+12/30,R,95,Ann Arbor,	Detroit,   2,A Grill,	2
+12/30,S,95,Chicago, 	Mich City, 1,Gates,	1
+12/30,S,95,Chicago,	Albion,	   6,Jimmy,	1
+12/30,S,95,Chicago,	Dearborn,  9,Flower,	9
+12/30,S,95,Mich City,	Detroit,   9,Baker,	5
+12/30,S,98,Kalamazoo, 	Detroit,   6,Pepinig,	2
+12/30,S,98,Chicago,	Albion,	   6,Joes,	2
+12/30,S,98,Chicago,	Dearborn,  9,Kitty,     3
+12/30,S,98,Mich City,	Detroit,   9,Cook,	5
+12/30,S,98,Kalamazoo,	Detroit,   6,Salter,	1
